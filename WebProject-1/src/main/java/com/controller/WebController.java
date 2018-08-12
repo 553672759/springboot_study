@@ -19,7 +19,7 @@ public class WebController {
 	@Value(value="${xx.limitnumber}")
 	private int limitnumber;
 	
-	@RequestMapping("/index")
+	@RequestMapping("/in")
 	public Map<String,Object> Index(){
 		Map<String, Object> map = new HashMap<String,Object>();
 		map.put("uuid", uuid);
@@ -28,6 +28,4 @@ public class WebController {
 		return map;
 		
 	}
-	
-	
 }
