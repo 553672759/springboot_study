@@ -1,0 +1,31 @@
+package xx.dao;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import xx.dao.inte.UsersDao;
+import xx.modal.Users;
+
+
+public class UsersDaoImpl implements UsersDao{
+	
+	@Autowired
+	private MongoTemplate mongoTemplate;
+	
+	public List<Users> findAll(){
+		
+		return mongoTemplate.findAll(Users.class);
+	}
+
+	public Object add(Users user) {
+		try {
+			mongoTemplate.save(user);
+			return "OK";
+		}catch (Exception e) {
+			return e.getMessage();
+		}
+		
+	}
+}
