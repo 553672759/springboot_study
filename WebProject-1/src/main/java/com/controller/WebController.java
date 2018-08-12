@@ -1,4 +1,4 @@
-package xx.controller;
+package com.controller;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value=("/web"))
 public class WebController {
 	
 	@Value(value="${xx.secret}")
@@ -20,7 +19,7 @@ public class WebController {
 	@Value(value="${xx.limitnumber}")
 	private int limitnumber;
 	
-	@RequestMapping(value="/index")
+	@RequestMapping("/index")
 	public Map<String,Object> Index(){
 		Map<String, Object> map = new HashMap<String,Object>();
 		map.put("uuid", uuid);

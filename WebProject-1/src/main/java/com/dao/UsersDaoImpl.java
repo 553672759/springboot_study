@@ -1,14 +1,16 @@
-package xx.dao;
+package com.dao;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import xx.dao.inte.UsersDao;
-import xx.modal.Users;
+import org.springframework.stereotype.Component;
 
+import com.daoInteface.UsersDao;
+import com.modal.Users;
 
+@Component
 public class UsersDaoImpl implements UsersDao{
 	
 	@Autowired

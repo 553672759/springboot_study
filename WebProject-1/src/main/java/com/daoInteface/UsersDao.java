@@ -1,9 +1,12 @@
-package xx.dao.inte;
+package com.daoInteface;
 
 import java.util.List;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import xx.modal.Users;
+import org.springframework.stereotype.Component;
 
+import com.modal.Users;
+
+@Component
 public interface UsersDao  {
 	
 	List<Users> findAll();
