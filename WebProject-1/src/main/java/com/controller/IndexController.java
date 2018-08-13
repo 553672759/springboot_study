@@ -8,6 +8,10 @@ public class IndexController {
 	
 	@GetMapping("index")
 	public String Index() {
-		return "index.html";		
+		return "login.html";		
+	}
+	@GetMapping("signup")
+	public String SignUp() {
+		return "signup.html";
 	}
 }
