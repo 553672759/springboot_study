@@ -1,9 +1,11 @@
 package com.controller;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.modal.Users;
@@ -19,7 +21,7 @@ public class UsersController {
 	@Autowired
 	Util util;
 	
-	@GetMapping("/useradd")
+	@GetMapping("/userAdd")
 	public String UsersAdd() {
 		Users user=new Users();
 		user.setId(util.GetUUID());
@@ -31,8 +33,15 @@ public class UsersController {
 		return "ok";
 	}
 	
+	@GetMapping("/userNumber")
+	public String getNumber() {
+		return usersService.getUsersNumber();
+	}
 	
+	@RequestMapping("/userList")
+	public List<Users> find() {
+		return usersService.getAllUsers();
+		
+	}
 	
-
-
 }

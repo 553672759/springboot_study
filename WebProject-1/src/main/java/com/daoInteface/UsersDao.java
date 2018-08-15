@@ -9,6 +9,6 @@ import com.modal.Users;
 @Component
 public interface UsersDao  {
 	
-	List<Users> findAll();
+	List findAll();
 
 }

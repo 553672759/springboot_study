@@ -22,4 +22,7 @@ public class UsersService {
 	public Object addUser(Users user) {
 		return usersDaoImpl.add(user);
 	}
+	public String getUsersNumber() {
+		return usersDaoImpl.getNumber();
+	}
 }

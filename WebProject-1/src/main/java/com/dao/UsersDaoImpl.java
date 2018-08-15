@@ -30,4 +30,7 @@ public class UsersDaoImpl implements UsersDao{
 		}
 		
 	}
+	public String getNumber() {
+		return Integer.toString(mongoTemplate.findAll(Users.class).size());
+	}
 }
