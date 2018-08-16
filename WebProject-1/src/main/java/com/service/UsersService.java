@@ -6,23 +6,23 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import com.dao.UsersDaoImpl;
+import com.dao.UsersDao;
 import com.modal.Users;
 
 @Component
 public class UsersService {
 
 	@Autowired
-	private UsersDaoImpl usersDaoImpl;
+	private UsersDao usersDao;
 	
 	public List getAllUsers() {
-		return usersDaoImpl.findAll();
+		return usersDao.findAll();
 	}
 	
 	public Object addUser(Users user) {
-		return usersDaoImpl.add(user);
+		return usersDao.add(user);
 	}
 	public String getUsersNumber() {
-		return usersDaoImpl.getNumber();
+		return usersDao.getNumber();
 	}
 }

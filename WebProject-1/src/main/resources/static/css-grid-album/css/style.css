@@ -1,0 +1,91 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background: #0f2027; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  text-align: center;
+}
+.container {
+  width: 80%;
+  margin: 40px auto;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  font-family: "Indie Flower", cursive;
+}
+.box img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.box {
+  position: relative;
+}
+.box::after,
+.box::before {
+  content: "";
+  position: absolute;
+  opacity: 1;
+  transition: all 0.4s ease-out;
+  top: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+}
+.box::before {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: scale(0, 1);
+}
+.box::after {
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  transform: scale(1, 0);
+}
+.box:hover::before {
+  background: rgba(0, 0, 0, 1);
+  transform: scale(1.05, 1);
+}
+.box:hover::after {
+  transform: scale(1, 1.05);
+}
+.box .content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+  color: white;
+  opacity: 0;
+}
+.box:hover .content {
+  opacity: 1;
+}
+.box .content h2,
+.box .content p {
+  padding: 10px;
+  font-size: 1.3rem;
+}
+.box:hover img {
+  opacity: 0.4;
+}

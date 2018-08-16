@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class IndexController {
 	
-	@GetMapping("index")
-	public String Index() {
-		return "login.html";		
-	}
-	@GetMapping("signup")
-	public String SignUp() {
-		return "signup.html";
-	}
+//	@GetMapping("index")
+//	public String Index() {
+//		return "login.html";		
+//	}
+//	@GetMapping("signup")
+//	public String SignUp() {
+//		return "signup.html";
+//	}
 }

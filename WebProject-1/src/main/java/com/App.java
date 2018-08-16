@@ -4,6 +4,15 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
+import com.lication.MyApplicationEvent;
+import com.lication.MyApplicationListenter;
+
+
+/**
+ * 带有监听的程序启动方法
+ * @author xx
+ *
+ */
 @SpringBootApplication
 public class App {
 	
