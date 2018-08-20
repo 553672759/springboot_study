@@ -10,26 +10,26 @@
 <link rel="stylesheet" href="css/style.css">
 
 <script type="text/javascript">
-	function submit() {
+	function check() {
 		alert("123");
-		alert($("#Username").val());
-	}
+		
+	}	
 </script>
 
 </head>
 
 <body>
-
+	<!-- 添加上name属性后，后台即可取到数值了 -->
 	<div class="wrapper">
 		<div class="container">
-			<h1>Welcome</h1>
+			<h1>sign up</h1>
 
-			<form class="form" action="/">
-				<input type="text" placeholder="Username" id="Username"> <input
-					type="password" placeholder="Password" id="Password"> <input
-					type="password" placeholder="Password2" id="Password2"> <input
-					type="password" placeholder="Password2" id="Eamil">
-				<button type="submit" id="login-button" onclick="submit()">Login</button>
+			<form class="form" action="useradd" method ="post" >
+				<input type="text" placeholder="Username" id="Username" name="Username">
+				<input type="password" placeholder="Password" id="Password" name="Password"> 
+				<input type="password" placeholder="Password2" id="Password2" name="Password2"> 
+				<input type="text" placeholder="Eamil" id="Eamil" name="Email">
+				<button type="submit" id="login-button" onclick="check()">Login</button>
 			</form>
 		</div>
 
