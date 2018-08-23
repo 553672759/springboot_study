@@ -29,11 +29,12 @@ public class VideosController {
 		return videosService.GetNumber();
 	}
 	
-	@GetMapping("AddVideos")
-	public Object AddVideos() {
-		Videos videos=new Videos();
-		videos.setId(util.GetUUID());
-		videos.setVideoTitle("谍影重重");
-		return videosService.add(videos);
-	}
+//	@GetMapping("AddVideos")
+//	public Object AddVideos() {
+//		Videos videos=new Videos();
+//		videos.setId(util.GetUUID());
+//		videos.setVideoTitle("谍影重重");
+//		return videosService.add(videos);
+//	}
+	
 }

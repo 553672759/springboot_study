@@ -21,8 +21,17 @@ public class Videos {
 	//内容
 	private String VideoContent;
 	
-	//视频图片，海报
+	//视频海报地址
 	private String VideoImg;
+	
+	//视频海报名称
+	private String VideoImgName;
+	
+	//电影上映年份
+	private String VideoNd;
+	
+	//电影评分
+	private String VideoPF;
 	
 	//视频链接
 	private String VideoLink;
@@ -32,6 +41,23 @@ public class Videos {
 	
 	//显示排名
 	private String VideoRank;
+
+	
+	public String getVideoNd() {
+		return VideoNd;
+	}
+
+	public void setVideoNd(String videoNd) {
+		VideoNd = videoNd;
+	}
+
+	public String getVideoPF() {
+		return VideoPF;
+	}
+
+	public void setVideoPF(String videoPF) {
+		VideoPF = videoPF;
+	}
 
 	public String getId() {
 		return id;
@@ -103,6 +129,13 @@ public class Videos {
 
 	public void setVideoRank(String videoRank) {
 		VideoRank = videoRank;
+	}
+	public String getVideoImgName() {
+		return VideoImgName;
+	}
+
+	public void setVideoImgName(String videoImgName) {
+		VideoImgName = videoImgName;
 	}
 
 
