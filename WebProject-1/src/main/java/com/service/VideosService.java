@@ -26,5 +26,9 @@ public class VideosService {
 	public Object add(Videos v) {
 		return videosDao.add(v);
 	}
+	
+	public long countSample() {
+		return videosDao.countSample(id)
+	}
 
 }
