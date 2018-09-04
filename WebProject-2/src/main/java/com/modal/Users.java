@@ -12,7 +12,7 @@ public class Users {
 	
 	private String RealName;
 	
-	private String email;
+	private String Email;
 
 	public String getId() {
 		return id;
@@ -47,10 +47,10 @@ public class Users {
 	}
 
 	public String getEmail() {
-		return email;
+		return Email;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmail(String Email) {
+		this.Email = Email;
 	}
 }

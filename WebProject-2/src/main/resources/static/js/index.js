@@ -1,6 +1,7 @@
  $("#login-button").click(function(event){
 		 event.preventDefault();
 	 
-	 $('form').fadeOut(500);
 	 $('.wrapper').addClass('form-success');
+	 var form = document.getElementById('form');
+	form.submit();
 });

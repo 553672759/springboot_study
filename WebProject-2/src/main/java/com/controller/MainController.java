@@ -35,7 +35,7 @@ public class MainController {
 		return "the-play-of-form/index.html";
 	}
 	
-	@GetMapping("grid")
+	@GetMapping("video")
 	public String Grid() {
 		return "css-grid-album/index.html";
 	}

@@ -16,8 +16,15 @@ public class UsersService {
 	private UsersDao usersDao;
 	
 	public List getAllUsers() {
-		return usersDao.findAll();
+		return usersDao.getAllUser();
 	}
 	
+	public Object Add(Users user) {
+		return usersDao.add(user);
+	}
+	
+	public Object checkLogin(String username,String password) {
+		return usersDao.checkLogin(username,password);
+	}
 
 }

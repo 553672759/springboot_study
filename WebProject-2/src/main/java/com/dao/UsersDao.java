@@ -1,40 +1,51 @@
 package com.dao;
 
 import java.util.List;
-
+import java.util.UUID;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
-
-import com.dao.Inteface.IUsersDao;
 import com.modal.Users;
 
 @Component
-public class UsersDao implements IUsersDao{
+public class UsersDao {
 
-	@Override
-	public List findAll() {
-		// TODO Auto-generated method stub
-		return null;
+	@Autowired
+    private JdbcTemplate jdbcTemplate;
+	
+	
+	public Object add(Users user) {
+		String sql="insert into myweb.users VALUES('"+UUID.randomUUID().toString()+"','"+user.getUserName()+"','"+user.getPassWord()+"','"+user.getUserName()+"','"+user.getEmail()+"')";
+		System.out.println(sql);
+		//---------------日志的使用---------------------
+		Log log = LogFactory.getLog(UsersDao.class);
+		log.info(sql);	
+		log.error(sql);
+        log.debug(sql);
+		//----------------------------------------------
+		jdbcTemplate.update(sql);
+		return true;
 	}
 	
+	public List getAllUser() {
+		String sql="select UserName from myweb.Users";
+		List list=jdbcTemplate.queryForList(sql);
+		return list;
+		
+	}
 	
-	
-//	
-//	public List<Users> findAll(){
-//		
-//		return mongoTemplate.findAll(Users.class);
-//	}
-//
-//	public Object add(Users user) {
-//		try {
-//			mongoTemplate.save(user);
-//			return "OK";
-//		}catch (Exception e) {
-//			return e.getMessage();
-//		}
-//		
-//	}
-//	public String getNumber() {
-//		return Integer.toString(mongoTemplate.findAll(Users.class).size());
-//	}
+	public Object checkLogin(String username,String password) {
+		String sql="select * from myweb.Users where usernam='"+username+"'";
+		Users user=jdbcTemplate.queryForObject(sql, Users.class);
+		if(user.getPassWord().toString()==password) {
+			return user;
+		}else {
+			return false;
+		}
+	}
 }
+	
+	
+
