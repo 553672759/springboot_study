@@ -1,12 +1,15 @@
 package com.dao;
 
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
+
+import com.controller.LoginController;
 import com.modal.Users;
 
 @Component
@@ -37,10 +40,16 @@ public class UsersDao {
 	}
 	
 	public Object checkLogin(String username,String password) {
-		String sql="select * from myweb.Users where usernam='"+username+"'";
-		Users user=jdbcTemplate.queryForObject(sql, Users.class);
-		if(user.getPassWord().toString()==password) {
-			return user;
+		String sql="select * from myweb.Users where username='"+username+"'";
+		
+		Log log = LogFactory.getLog(LoginController.class);
+		log.info("===="+sql);
+		
+		List<Map<String, Object>> list=jdbcTemplate.queryForList(sql);
+		Map map=list.get(0);
+		System.out.println("=="+map.get("PassWord")+"=="+password);
+		if(map.get("PassWord").toString().equals(password)) {
+			return map;
 		}else {
 			return false;
 		}

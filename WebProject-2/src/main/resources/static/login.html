@@ -14,11 +14,11 @@
 
 	<div class="wrapper" style="height: 101%; width: 100%">
 		<div class="container">
-			<h1>Welcome</h1>
-
+		<!--  可以取得后台传递过来的user对象 -->
+			<h1><p th:text="'Hello, ' + ${user.PassWord}" /><br/></h1>
 			<form class="form" action="userlogin" method="post">
-				<input type="text" placeholder="Username" id="Username"> 
-				<input type="password" placeholder="Password" id="Password"> 
+				<input type="text" placeholder="Username" id="Username" name="Username"> 
+				<input type="password" placeholder="Password" id="Password" name="Password"> 
 				<input type="submit" id="login-buttom">
 			</form>
 		</div>
